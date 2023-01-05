@@ -84,10 +84,28 @@ a.link::after{
   content: ">";
 }
 
+/* FIGURES */
+.figures{
+  position: relative;
+}
+.figures figure,
+.figures figcaption{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.figures figcaption *{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 
 /* HEADER */
 header{
   background-color: #3a3a3a;
+  position: relative;
+  z-index: 9;
 }
 header .inner{
   max-width: 1020px;
@@ -359,13 +377,34 @@ nav .menu li.active:hover a{
   width: 221px;
   height: 91px;
   background-image: url(../images/hero_ipad_text.png);
+  position: absolute;
+  transform: translate(624px, 235px);
+  z-index: 1;
 }
-.hero figure{}
-.hero figure img{}
-.hero figure figcaption{}
-.hero figure figcaption .caption-camera{}
-.hero figure figcaption .caption-chip{}
-.hero figure figcaption .caption-storage{}
+.hero .figures{
+  height: 808px;
+}
+.hero figure{
+  transform: translate(74px,-64px);
+}
+.hero figure figcaption .caption-camera{
+  background-image: url(../images/hero_ipad_caption_camera.png);
+  width: 120px;
+  height: 84px;
+  transform: translate(43px, 580px);
+}
+.hero figure figcaption .caption-chip{
+  background-image: url(../images/hero_ipad_caption_chip.png);
+  width: 95px;
+  height: 43px;
+  transform: translate(589px, 510px);
+}
+.hero figure figcaption .caption-storage{
+  background-image: url(../images/hero_ipad_caption_storage.png);
+  width: 80px;
+  height: 43px;
+  transform: translate(627px, 631px);
+}
 .hero h2{
   background-image: url(../images/hero_headline.png);
   width: 738px;
