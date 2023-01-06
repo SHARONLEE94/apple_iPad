@@ -440,3 +440,34 @@ nav .menu li.active:hover a{
 .hero .links{
   margin-top: 30px;
 }
+
+/* POWER */
+.power{
+  margin-top: 110px;
+}
+/* POWER/MULTIPLE-APPS */
+.power .multiple-apps h1{
+  background-image: url(../images/power_headline.png);
+  width: 500px;
+  height: 280px;
+  transform: translate(104px, 0);
+}
+.power .multiple-apps .figures{
+  height: 733px;
+}
+.power .multiple-apps figcaption{
+  background-image: url(../images/power_multiple_apps_caption.png);
+  width: 138px;
+  height: 43px;
+  transform: translate(703px, -47px);
+}
+/* POWER/ARCADE */
+.power .arcade{}
+.power .arcade .figures{}
+.power .arcade figure{}
+.power .arcade figcaption{}
+/* POWER/CREAT */
+.power .creat{}
+.power .creat .figures{}
+.power .creat figure{}
+.power .creat figcaption{}
