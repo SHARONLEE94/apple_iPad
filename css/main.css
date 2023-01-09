@@ -142,6 +142,9 @@ a.link::after{
   opacity: 1;
   transform: translate(0, 0);
 }
+.infos--large .info{
+  max-width: 410px;
+}
 .info .icon{
   width: 100px;
   height: 100px;
@@ -736,9 +739,13 @@ nav .menu li.active:hover a{
   width: 200px;
   height: 70px;
   background-image: url(../images/accessories_caption_supports.png);
-  transform: translate(136px, 821px);
+  transform: translate(163px, 821px);
 }
-.accessories .infos{}
+.accessories .infos{
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
 
 
 
