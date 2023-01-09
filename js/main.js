@@ -115,3 +115,5 @@ pauseBtn.addEventListener("click", function() {
   playBtn.classList.remove("hide");
   pauseBtn.classList.add("hide");
 });
+
+
