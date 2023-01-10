@@ -215,7 +215,7 @@ a.link::after{
 
 /* HEADER */
 header{
-  --height-header:44px;
+  --header-height:44px;
   background-color: var(--color-header);
   position: relative;
   z-index: 9;
@@ -225,13 +225,16 @@ header .inner{
 }
 header ul.menu{
   display: flex;
-  height: var(--height-header);
+  height: var(--header-height);
   justify-content: space-between;
 }
 header ul.menu > li{
   display: flex;
   position: relative;
   transition: .4s;
+}
+header ul.menu > li.menu-starter{
+  display: none;
 }
 header ul.menu > li > a{
   padding: 0 10px;
@@ -352,7 +355,7 @@ header .search .textfield{
 }
 header .search input{
   width: 100%;
-  height: var(--height-header);
+  height: var(--header-height);
   padding: 0 40px;
   border: none;
   outline: none;
@@ -363,7 +366,7 @@ header .search input{
 }
 header .search .search-icon{
   width: 40px;
-  height: var(--height-header);
+  height: var(--header-height);
   background-image: url(../images/header_search.svg);
   background-repeat: no-repeat;
   background-position: center;
@@ -374,7 +377,7 @@ header .search .search-icon{
 }
 header .search .search-closer{
   width: 40px;
-  height: var(--height-header);
+  height: var(--header-height);
   background-image: url(../images/header_close.svg);
   background-repeat: no-repeat;
   background-position: center;
@@ -394,7 +397,7 @@ header .search .autocompletes{
   box-sizing: border-box;
   background-color: var(--color-white);
   position: absolute;
-  top: var(--height-header);
+  top: var(--header-height);
   left: 0;
 }
 header .search .autocompletes h3{
@@ -437,6 +440,64 @@ header.searching .search .autocompletes li{
   transition-delay: .2s;
   transform: translate(0,0);
 }
+
+@media (max-width:1000px){
+  header .inner{
+    padding: 0 10px;
+  }
+}
+
+@media (max-width:740px){
+  header::before{
+    content: "";
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: var(--color-header);
+    transition: .4s;
+  }
+  header ul.menu > li{
+    display: none;
+  }
+  header ul.menu > li.menu-starter,
+  header ul.menu > li.apple-logo,
+  header ul.menu > li.basket-starter{
+    display: flex;
+  }
+  header ul.menu > li.menu-starter span{
+    display: block;
+    width: 15px;
+    height: 1px;
+    background-color: var(--color-white);
+    margin-bottom: 6px;
+    transition: .4s;
+  }
+  header ul.menu > li.menu-starter span:last-child{
+    margin-bottom: 0;
+  }
+  header.menuing{
+    background-color: var(--color-black);
+  }
+  header.menuing::before{
+    height: 100vh;
+    background-color: var(--color-black);
+  }
+  header.menuing ul.menu > li.basket-starter{
+    opacity: 0;
+    visibility: hidden;
+  }
+  header.menuing ul.menu > li.menu-starter span:first-child{
+    transform: translate(0, 3.5px) rotate(45deg);
+  }
+  header.menuing ul.menu > li.menu-starter span:last-child{
+    transform: translate(0, -3.5px) rotate(-45deg);
+  }
+}
+
+
+
 
 /* NAVIGATION */
 nav{
