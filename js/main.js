@@ -45,7 +45,10 @@ const searchDelayEls = [...searchWrapEl.querySelectorAll("li")];
 
 
 searchStarterEl.addEventListener("click", showSearch);
-searchCloserEl.addEventListener("click", hideSearch);
+searchCloserEl.addEventListener("click", function(event) {
+  event.stopPropagation();
+  hideSearch();
+});
 searchShadowEl.addEventListener("click", hideSearch);
 
 
@@ -100,6 +103,7 @@ const menuStarterEl = document.querySelector("header .menu-starter");
 menuStarterEl.addEventListener("click", function() {
   if(headerEl.classList.contains("menuing")) {
     headerEl.classList.remove("menuing");
+    searchInputEl.value='';
     playScroll();
   }else{
     headerEl.classList.add("menuing");
@@ -108,7 +112,26 @@ menuStarterEl.addEventListener("click", function() {
 });
 
 
+// 헤더 검색
+const searchTextFiedlEl = document.querySelector("header .textfield");
+const searchCancelEl = document.querySelector("header .search-canceler");
+searchTextFiedlEl.addEventListener("click", function() {
+  headerEl.classList.add("searching--mobile");
+  searchInputEl.focus();
+});
+searchCancelEl.addEventListener("click", function() {
+  headerEl.classList.remove("searching--mobile");
+});
 
+
+// 예외처리
+window.addEventListener("resize", function() {
+  if(this.window.innerWidth <= 740) {
+    headerEl.classList.remove("searching");
+  }else {
+    headerEl.classList.remover("searching--mobile");
+  }
+});
 
 
 //요소의 가시성 관찰
